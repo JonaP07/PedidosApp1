@@ -1,0 +1,29 @@
+name: CI - PedidosApp Proveedor
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+
+    steps:
+    - name: Clonar repositorio
+      uses: actions/checkout@v2
+
+    - name: Instalar .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '8.0.x'  # Cambia a 6.0.x o 7.0.x según tu proyecto
+
+    - name: Restaurar dependencias
+      run: dotnet restore
+
+    - name: Compilar solución
+      run: dotnet build --no-restore
+
+    - name: Ejecutar pruebas
+      run: dotnet test --no-build --verbosity normal
