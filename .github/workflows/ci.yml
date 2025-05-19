@@ -1,4 +1,4 @@
-name: CI
+name: CI - Windows Forms Build
 
 on:
   push:
@@ -11,15 +11,17 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout del código
+      uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+    - name: Instalar MSBuild
+      uses: microsoft/setup-msbuild@v1.3.1
 
-    - name: Install dependencies
-      run: npm install
+    - name: Instalar NuGet
+      uses: NuGet/setup-nuget@v1.2.0
 
-    - name: Run tests
-      run: npm test
+    - name: Restaurar paquetes NuGet
+      run: nuget restore PedidosApp1.sln
+
+    - name: Compilar solución
+      run: msbuild PedidosApp1.sln /p:Configuration=Release
