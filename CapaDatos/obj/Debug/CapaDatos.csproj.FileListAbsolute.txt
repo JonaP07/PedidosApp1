@@ -10,3 +10,9 @@ C:\Users\pablo\source\repos\PedidosApp1\CapaDatos\obj\Debug\CapaDatos.csproj.Ass
 C:\Users\pablo\source\repos\PedidosApp1\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 C:\Users\pablo\source\repos\PedidosApp1\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\pablo\source\repos\PedidosApp1\CapaDatos\obj\Debug\CapaDatos.pdb
+D:\Ing.Software_2\PedidosApp1\CapaDatos\bin\Debug\CapaDatos.dll
+D:\Ing.Software_2\PedidosApp1\CapaDatos\bin\Debug\CapaDatos.pdb
+D:\Ing.Software_2\PedidosApp1\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+D:\Ing.Software_2\PedidosApp1\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+D:\Ing.Software_2\PedidosApp1\CapaDatos\obj\Debug\CapaDatos.dll
+D:\Ing.Software_2\PedidosApp1\CapaDatos\obj\Debug\CapaDatos.pdb
