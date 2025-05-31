@@ -10,7 +10,7 @@ namespace CapaDatos
 {
     public class DProveedor : DbConnection
     {
-        //Variables
+        //Variables 
         private int _Idproveedor;
         private string _Razon_Social;
         private string _Sector_Comercial;
@@ -96,7 +96,7 @@ namespace CapaDatos
                         command.Parameters.Add(ParTipoDocumento);
 
                         SqlParameter ParNum_Documento = new SqlParameter();
-                        ParNum_Documento.ParameterName = "@numero_documento";
+                        ParNum_Documento.ParameterName = "@num_documento"; // Cambiado de @numero_documento a @num_documento
                         ParNum_Documento.SqlDbType = SqlDbType.VarChar;
                         ParNum_Documento.Size = 11;
                         ParNum_Documento.Value = Proveedor.Num_Documento;
@@ -188,8 +188,9 @@ namespace CapaDatos
                         ParTipoDocumento.Value = Proveedor.Tipo_Documento;
                         command.Parameters.Add(ParTipoDocumento);
 
+                        // --- Aquí está el cambio importante ---
                         SqlParameter ParNum_Documento = new SqlParameter();
-                        ParNum_Documento.ParameterName = "@numero_documento";
+                        ParNum_Documento.ParameterName = "@num_documento"; // Corregido aquí
                         ParNum_Documento.SqlDbType = SqlDbType.VarChar;
                         ParNum_Documento.Size = 11;
                         ParNum_Documento.Value = Proveedor.Num_Documento;
@@ -219,20 +220,16 @@ namespace CapaDatos
                         SqlParameter ParUrl = new SqlParameter();
                         ParUrl.ParameterName = "@url";
                         ParUrl.SqlDbType = SqlDbType.VarChar;
-                        ParUrl.Size = 150;
+                        ParUrl.Size = 100;
                         ParUrl.Value = Proveedor.Url;
                         command.Parameters.Add(ParUrl);
-                        //Ejecutamos nuestro comando
 
-                        rpta = command.ExecuteNonQuery() == 1 ? "OK" : "NO SE ACTUALIZO EL REGISTRO";
+                        int rowsAffected = command.ExecuteNonQuery();
+                        rpta = rowsAffected == 1 ? "OK" : "No se actualizó el registro";
                     }
                     catch (Exception ex)
                     {
                         rpta = ex.Message;
-                    }
-                    finally
-                    {
-                        if (connection.State == ConnectionState.Open) connection.Close();
                     }
                 }
             }

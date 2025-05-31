@@ -18,7 +18,7 @@ namespace PedidosApp1
         public FrmCliente()
         {
             InitializeComponent();
-            this.ttMensaje.SetToolTip(this.txtNombre, "Ingrese los nombres del Cliente");
+            this.ttMensaje.SetToolTip(this.txtNombre, "Ingrese los nombres del Clientes");
             this.ttMensaje.SetToolTip(this.txtApellidos, "Ingrese los Apellidos del Cliente");
             this.ttMensaje.SetToolTip(this.txtDireccion, "Ingrese la dirección del Cliente");
             this.ttMensaje.SetToolTip(this.txtNum_Documento, "Ingrese el número de documento del Cliente");
